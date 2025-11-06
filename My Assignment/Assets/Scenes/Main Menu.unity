@@ -154,8 +154,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 181, y: -146}
-  m_SizeDelta: {x: 268.1058, y: 100.7662}
+  m_AnchoredPosition: {x: 163, y: -126}
+  m_SizeDelta: {x: 246.0374, y: 86.3544}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &36789660
 MonoBehaviour:
@@ -286,8 +286,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -179, y: 14}
-  m_SizeDelta: {x: 268.1058, y: 100.7662}
+  m_AnchoredPosition: {x: -167.36761, y: 11.116425}
+  m_SizeDelta: {x: 246.0374, y: 86.3544}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &480223635
 MonoBehaviour:
@@ -335,7 +335,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 481528456}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ToGame
+        m_MethodName: ToLevelOne
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -568,8 +568,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -179, y: -146}
-  m_SizeDelta: {x: 268.1058, y: 100.7662}
+  m_AnchoredPosition: {x: -167.36761, y: -126}
+  m_SizeDelta: {x: 246.0374, y: 86.3544}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1435865354
 MonoBehaviour:
@@ -779,8 +779,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 181, y: 14}
-  m_SizeDelta: {x: 268.1058, y: 100.7662}
+  m_AnchoredPosition: {x: 163, y: 11.116425}
+  m_SizeDelta: {x: 246.0374, y: 86.3544}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1681983372
 MonoBehaviour:
@@ -910,8 +910,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 172}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: 116}
+  m_SizeDelta: {x: 183.5376, y: 42.8489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1812509071
 MonoBehaviour:
@@ -935,8 +935,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: A game made by me
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -998,7 +998,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -147.45096, y: 0, z: -116.8479, w: 0}
+  m_margin: {x: -147.45102, y: -21.288574, z: -141.17767, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1112,7 +1112,7 @@ RectTransform:
   - {fileID: 1435865353}
   - {fileID: 1812509070}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.112}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}

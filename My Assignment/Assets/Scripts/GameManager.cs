@@ -37,6 +37,15 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Level 4");
     }
+
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            SceneManager.LoadScene("You Died");
+        }
+    }
     public void QuitGame()
     {
         Application.Quit();
