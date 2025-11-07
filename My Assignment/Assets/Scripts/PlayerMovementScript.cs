@@ -36,9 +36,7 @@ public class PlayerMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         HandleMovement();
-
     }
 
     private bool IsGrounded()
@@ -46,16 +44,16 @@ public class PlayerMovementScript : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
-    private void Flip()
-    {
-        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
-        {
-            isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
-        }
-    }
+    // private void Flip()
+    // {
+    //     if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
+    //     {
+    //         isFacingRight = !isFacingRight;
+    //         Vector3 localScale = transform.localScale;
+    //         localScale.x *= -1f;
+    //         transform.localScale = localScale;
+    //     }
+    // }
 
     private void HandleMovement()
     {
@@ -93,16 +91,6 @@ public class PlayerMovementScript : MonoBehaviour
             spriteRenderer.flipX = true;
         }
         xPosLastFrame = transform.position.x;
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            YouDiedMenu player = collision.gameObject.GetComponent<YouDiedMenu>();
-            player.PlaySFX(hurtClip);
-            player.LoadYouDied();
-        }
-
     }
     public void PlaySFX(AudioClip audioClip)
     {

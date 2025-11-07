@@ -16,12 +16,4 @@ public class EnemyMovement : MonoBehaviour
         // Move the enemy in the specified direction
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            YouDiedMenu player = collision.gameObject.GetComponent<YouDiedMenu>();
-            player.LoadYouDied();
-        }
-    }
 }

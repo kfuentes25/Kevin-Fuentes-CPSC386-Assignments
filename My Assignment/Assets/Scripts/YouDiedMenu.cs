@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.PackageManager;
-using UnityEngine;
 using UnityEngine.SceneManagement;
-using static PlayerMovementScript;
-
+using UnityEngine;
 public class YouDiedMenu : MonoBehaviour
 {
     [SerializeField] GameObject youDiedMenu;
@@ -22,6 +20,14 @@ public class YouDiedMenu : MonoBehaviour
     void Update()
     {
 
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            LoadYouDied();
+            PlaySFX(hurtClip);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
