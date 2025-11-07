@@ -8,8 +8,10 @@ public class PlayerMovementScript : MonoBehaviour
     
     private float horizontal;
     private float jumpingPower = 16f;
-    private bool isFacingRight = true;
-
+    private bool isFacingRight;
+    
+    
+    [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -29,7 +31,6 @@ public class PlayerMovementScript : MonoBehaviour
     void Update()
     {
 
-        Flip();
         HandleMovement();
 
     }
@@ -58,8 +59,7 @@ public class PlayerMovementScript : MonoBehaviour
 
         if (inputMovement != 0){
             _animator.SetBool("isRunning", true);
-        }
-        else{
+        } else{
             _animator.SetBool("isRunning", false);
         }
 
@@ -67,13 +67,17 @@ public class PlayerMovementScript : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
             _animator.SetBool("isJumping", true);
             // Play sound effect for Jump
-        }        
-        else {
+        } else {
             _animator.SetBool("isJumping", false);
         } 
-        // if (Input.GetButtonDown("Jump") && rb.linearVelocity.y > 0f) {
-        //     rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
-        //     _animator.SetBool("isJumping", true);
-        // }
+        
+        if (inputMovement > 0 && (transform.position.x > xPosLastFrame))
+        {
+            spriteRenderer.flipX = false;
+        } else if (inputMovement < 0 && (transform.position.x < xPosLastFrame))
+        {
+            spriteRenderer.flipX = true;
+        }
+        xPosLastFrame = transform.position.x;
     }
 }

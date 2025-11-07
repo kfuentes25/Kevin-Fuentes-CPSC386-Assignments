@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 4.unity
     guid: b69009355040a8c4f8f6c9062f243790
   - enabled: 1
+    path: Assets/Scenes/You Win.unity
+    guid: a5b41d264e5bb47b0a2b6b9669971da4
+  - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 4d50a0aeb8a7d7f4da0bf9a37cf40e9e
   - enabled: 1
@@ -26,9 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels Menu.unity
     guid: 9663558109464c942937785536b867a6
-  - enabled: 1
-    path: Assets/Scenes/Pause Menu.unity
-    guid: 9a0d43da10f25ae42806f13c91c3398b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

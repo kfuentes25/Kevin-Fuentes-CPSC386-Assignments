@@ -39,37 +39,15 @@ public class GameManager : MonoBehaviour
     }
 
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            SceneManager.LoadScene("You Died");
-        }
-    }
+    // void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     if (collision.tag == "Player")
+    //     {
+    //         SceneManager.LoadScene("You Died");
+    //     }
+    // }
     public void QuitGame()
     {
         Application.Quit();
     }
-    // public bool BackToLevelFromPause()
-    // {
-    //     public static bool GameIsPaused = false;
-
-    //     void Update()
-    //     {
-    //         if (Input.GetKeyDown(KeyCode.Escape))
-    //         {
-    //             if (GameIsPaused)
-    //                 Resume();
-    //             else
-    //                 Pause();
-    //         }
-    //     }
-    //     public void Resume()
-    //     {
-    //         pauseMenuUI.SetActive(false);
-    //         Time.timeScale = 1f;  // resumes time
-    //         GameIsPaused = false;
-    //     }
-
-    // }
 }
