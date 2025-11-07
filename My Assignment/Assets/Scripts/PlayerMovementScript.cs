@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerMovementScript : MonoBehaviour
@@ -9,8 +10,13 @@ public class PlayerMovementScript : MonoBehaviour
     private float horizontal;
     private float jumpingPower = 16f;
     private bool isFacingRight;
-    
-    
+    private Vector2 movement;
+    private float xPosLastFrame;
+    private AudioSource _audioSource;
+    public AudioClip jumpClip;
+    public AudioClip hurtClip;
+
+
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -18,13 +24,13 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private Animator _animator;
 
-    private Vector2 movement;
-    private float xPosLastFrame;
+
 
 
 
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -57,27 +63,50 @@ public class PlayerMovementScript : MonoBehaviour
         movement.x = inputMovement * speed * Time.deltaTime;
         transform.Translate(movement);
 
-        if (inputMovement != 0){
+        if (inputMovement != 0)
+        {
             _animator.SetBool("isRunning", true);
-        } else{
+        }
+        else
+        {
             _animator.SetBool("isRunning", false);
         }
 
-        if (Input.GetButtonDown("Jump") && IsGrounded()) {
+        if (Input.GetButtonDown("Jump") && IsGrounded())
+        {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
             _animator.SetBool("isJumping", true);
+            PlaySFX(jumpClip);
             // Play sound effect for Jump
-        } else {
+        }
+        else
+        {
             _animator.SetBool("isJumping", false);
-        } 
-        
+        }
+
         if (inputMovement > 0 && (transform.position.x > xPosLastFrame))
         {
             spriteRenderer.flipX = false;
-        } else if (inputMovement < 0 && (transform.position.x < xPosLastFrame))
+        }
+        else if (inputMovement < 0 && (transform.position.x < xPosLastFrame))
         {
             spriteRenderer.flipX = true;
         }
         xPosLastFrame = transform.position.x;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            YouDiedMenu player = collision.gameObject.GetComponent<YouDiedMenu>();
+            player.PlaySFX(hurtClip);
+            player.LoadYouDied();
+        }
+
+    }
+    public void PlaySFX(AudioClip audioClip)
+    {
+        _audioSource.clip = audioClip;
+        _audioSource.Play();
     }
 }
